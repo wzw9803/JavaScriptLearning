@@ -35,6 +35,7 @@ c.set(10);
 console.log(c.get());//10
 
 //第三题
+//遍历二叉树，或者求出数组深度
 
 class Node {
         constuctor () {
