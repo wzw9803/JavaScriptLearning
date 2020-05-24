@@ -1,49 +1,50 @@
 //第一题
-// function Foo() {
-//     getName = function(){ alert(1); };
-//     return this;
-// }
-// Foo.getName = function() { alert(2); };
-// Foo.prototype.getName = function(){ alert(3); };
-// var getName = function() { alert(4); };
-// function getName(){ alert(5); }
+function Foo() {
+    getName = function(){ alert(1); };
+    return this;
+}
+Foo.getName = function() { alert(2); };
+Foo.prototype.getName = function(){ alert(3); };
+var getName = function() { alert(4); };
+function getName(){ alert(5); }
 
-// Foo.getName(); // 2
-// getName(); // 4
-// Foo().getName(); // 1
-// getName(); // 1
-// new Foo.getName(); // 2
-// new Foo().getName(); // 3
+Foo.getName(); // 2
+getName(); // 4
+Foo().getName(); // 1
+getName(); // 1
+new Foo.getName(); // 2
+new Foo().getName(); // 3
 
 //第二题
-// function a (){
-//    let b = 0;
-//    return {
-//            b: 2,
-//           set(n) {
-//                b = n
-//        },
-//          get () {
-//                return b;
-//            }
-//    }
-// }
+function a (){
+   let b = 0;
+   return {
+           b: 2,
+          set(n) {
+               b = n
+       },
+         get () {
+               return b;
+           }
+   }
+}
 
-// let c = a();
-// console.log(c.get());
-// c.set(10);
-// console.log(c.get());
+let c = a();
+console.log(c.get());//0
+c.set(10);
+console.log(c.get());//10
 
 //第三题
-const  a = [1, [3, [4, [5]], [6]], [2]];
-   class Node {
+
+class Node {
         constuctor () {
             this.v = 1;
             this.left = null;
             this.right = null;
         }
-    }
+}
 
+const  a = [1, [3, [4, [5]], [6]], [2]];
 function getArrayMaxDepth() {
 
 
