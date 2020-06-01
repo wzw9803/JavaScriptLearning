@@ -46,10 +46,38 @@ class Node {
 }
 
 const  a = [1, [3, [4, [5]], [6]], [2]];
-function getArrayMaxDepth() {
+//解法一：
+let depth = 0;
+let queue = [];
+function getArrayMaxDepth( arr, dep ) {
 
+  arr.forEach(element => {
+    if(Array.isArray(element)){
+      dep++;
+      getArrayMaxDepth(element, dep);  
+    }
+  });
+  queue.push(dep);
 
 }
+getArrayMaxDepth(a, 0);
+console.log(Math.max.apply(null, queue));
+
+//解法二：
+function getArrayDepth(arr) {
+  const depths = []
+  arr.forEach( ele => {
+    let depth = 0
+    if (Array.isArray(ele)) {
+      depth = getArrayDepth(ele)
+    }
+    depths.push(depth)
+  })
+  return 1 + Math.max.apply(null,depths)
+}
+console.log(getArrayDepth(a));
+
+//---------------------------------------------------
 
 //顺序执行异步操作
 // 第一个任务
