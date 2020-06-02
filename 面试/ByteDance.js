@@ -1,12 +1,12 @@
 //第一题
 function Foo() {
-    getName = function(){ alert(1); };
+    getName = function(){ console.log(1); };
     return this;
 }
-Foo.getName = function() { alert(2); };
-Foo.prototype.getName = function(){ alert(3); };
-var getName = function() { alert(4); };
-function getName(){ alert(5); }
+Foo.getName = function() { console.log(2); };
+Foo.prototype.getName = function(){ console.log(3); };
+var getName = function() { console.log(4); };
+function getName(){ console.log(5); }
 
 Foo.getName(); // 2
 getName(); // 4
